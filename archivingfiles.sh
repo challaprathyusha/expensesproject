@@ -10,10 +10,10 @@ else
 fi
 
 cd $SOURCEDIR
-FILES=$(find . -name *.log -mtime +14)
+FILES=$( find . -name '*.log' -mtime +14)
 
 while read -r line
 do 
     echo "files to archive:$line"
-    
+
 done <<< $FILES

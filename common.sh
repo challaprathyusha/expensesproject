@@ -2,7 +2,7 @@
 USERID="$(id -u)"
 TIMESTAMP="$(date +%F-%H-%M-%S)"
 SCRIPTNAME="$(echo $0|awk -F "." '{print$1F}')"
-LOGFILE="/tmp/$SCRIPT_NAME-$TIMESTAMP.log"
+LOGFILE="/tmp/$SCRIPTNAME-$TIMESTAMP.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
