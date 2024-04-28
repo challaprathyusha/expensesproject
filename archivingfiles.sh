@@ -11,11 +11,11 @@ fi
 
 cd $SOURCEDIR
 FILES=$( find . -name '*.log' -mtime +14)
-echo $FILES
+echo "Files that are more than 14days old:$FILES"
 
 while read -r line
 do 
- echo "files to archive:$line"
-
+    echo "files to archive:$line"
+    gzip $line
 
 done <<< $FILES
