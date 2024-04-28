@@ -13,7 +13,7 @@ if [ ! -d "$DESTINATIONDIR" ]; then
     exit 1
 fi
 
-FILES=$(find "$SOURCEDIR" -name '*.log' -mtime +14 -print0)
+FILES=$(find "$SOURCEDIR" -name '*.log' -mtime +14)
 echo "Files that are more than 14 days old:"
 echo "$FILES" | tr '\0' '\n'
 
