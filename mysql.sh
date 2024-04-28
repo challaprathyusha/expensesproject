@@ -1,7 +1,8 @@
 #!/bin/bash
 
 source ./common.sh
-check user
+
+checkuser
 
 echo "please enter password of root user:"
 read MYSQLPASSWD
