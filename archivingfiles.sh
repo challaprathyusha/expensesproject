@@ -24,6 +24,15 @@ echo "Files that are more than 14days old:$FILES"
 while read -r line
 do
     echo "files to archive:$line"
-    mv $SOURCEDIR/$line.tar $DESTINATIONDIR
+    cd $SOURCEDIR
+    tar cvf $line.tar $line
+    if [ $? -ne 0 ]
+    then 
+        echo "archived files already exist so..skipping"
+        exit
+    else 
+        mv "$SOURCEDIR/$line.tar" "$DESTINATIONDIR"
+        echo "files archived and moved successfully"
+    fi
 done <<< $FILES
-#tar cvf $line.tar $line
+
