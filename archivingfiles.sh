@@ -18,6 +18,14 @@ else
 fi
 
 
-FILES=$( find $SOURCEDIR -name '*.log' -mtime +14)
+FILES=$(find $SOURCEDIR -name '*.log' -mtime +14)
 echo "Files that are more than 14days old:$FILES"
+
+while read -r line
+do
+    echo "files to archive:$line"
+    #tar cvf $line.tar $line
+    #mv $SOURCEDIR/$line.tar $DESTINATIONDIR
+    
+done <<< $FILES
 
