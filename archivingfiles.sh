@@ -1,6 +1,6 @@
 #!/bin/bash
 SOURCEDIR="$1"
-
+DESTINATIONDIR="$2"
 if [ -d $SOURCEDIR ]
 then
     echo "$SOURCEDIR exists"
@@ -14,9 +14,9 @@ FILES=$( find . -name '*.log' -mtime +14)
 echo "Files that are more than 14days old:$FILES"
 
 while read -r line
-do 
+do
     echo "files to archive:$line"
-    rm $SOURCEDIR/*.log.gz
-    gzip $line
-
+    tar cvf $line.tar $line
+    mv $line.tar $DESTINATIONDIR
+    #ARCHIVEDFILES=$DESTINATIONDIR/$line.tar
 done <<< $FILES
