@@ -17,7 +17,8 @@ FILES=$(find "$SOURCEDIR" -name '*.log' -mtime +14)
 echo "Files that are more than 14 days old:"
 echo "$FILES" | tr '\0' '\n'
 
-while IFS= read -r -d '' line; do
+while IFS= read -r -d '' line
+do
     echo "Archiving file: $line"
     tar -C "$SOURCEDIR" -cvf "$line.tar" "$line"
     if [ $? -eq 0 ]; then
