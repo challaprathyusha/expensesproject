@@ -9,7 +9,7 @@ Y="\e[33m"
 N="\e[0m"
 
 checkuser(){
-if [ USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo -e "$R Please run the script with super user privilages $N"
     exit 1
