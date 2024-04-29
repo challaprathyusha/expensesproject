@@ -5,7 +5,7 @@ FREEMEMORY=$(free -mt|tail -n 1|awk '{print$4F}')
 THRESHOLDMEMORY=500
 date=$(date +%F-%H-%M-%S)
 
-if [ $USEDMEMORY -ge $THRESHOLDMEMORY]
+if [ $USEDMEMORY -ge $THRESHOLDMEMORY ]
 then
     echo "memory is reaching threshold where USEDMEMORY= $USEDMEMORY,THRESHOLDMEM=$THRESHOLDMEMORY"
 else
