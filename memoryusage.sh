@@ -2,8 +2,9 @@
 USEDMEMORY=$(free -mt|tail -n 1|awk '{print$3F}')
 TOTALMEMORY=$(free -mt|tail -n 1|awk '{print$2F}')
 FREEMEMORY=$(free -mt|tail -n 1|awk '{print$4F}')
-THRESHOLDMEMORY=500
+THRESHOLDMEMORY=100
 date=$(date +%F-%H-%M-%S)
+MESSAGE=""
 
 if [ $USEDMEMORY -ge $THRESHOLDMEMORY ]
 then
@@ -11,4 +12,6 @@ then
 else
     echo "As per DATE=$date used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMORY"
 fi
+
+
 
