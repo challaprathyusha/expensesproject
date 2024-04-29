@@ -9,6 +9,6 @@ if [ $USEDMEMORY -ge $THRESHOLDMEMORY ]
 then
     echo "memory is reaching threshold where USEDMEMORY= $USEDMEMORY,THRESHOLDMEM=$THRESHOLDMEMORY"
 else
-    echo "As per DATE=$date used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMOR"
+    echo "As per DATE=$date used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMORY"
 fi
 
