@@ -8,10 +8,12 @@ MESSAGE=""
 
 if [ $USEDMEMORY -ge $THRESHOLDMEMORY ]
 then
-    echo "memory is reaching threshold where USEDMEMORY= $USEDMEMORY,THRESHOLDMEM=$THRESHOLDMEMORY"
+    echo "used memory crossed threshold where USEDMEMORY= $USEDMEMORY,THRESHOLDMEM=$THRESHOLDMEMORY and free memory=$FREEMEMORY"
+    MESSAGE="used memory crossed threshold where USEDMEMORY= $USEDMEMORY,THRESHOLDMEM=$THRESHOLDMEMORY and free memory=$FREEMEMORY"
 else
-    echo "As per DATE=$date used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMORY"
+    echo "used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMORY"
+    MESSAGE="used memory=$USEDMEMORY,totalmemory=$TOTALMEMORY and left with freememory of $FREEMEMORY"
 fi
 
-
+echo "As per DATE=$date,$MESSAGE" | mail -s "memory usage in servers" cprathyusha94@gmail.com
 
