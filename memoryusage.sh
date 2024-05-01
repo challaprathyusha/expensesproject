@@ -1,7 +1,7 @@
 #!/bin/bash
-USEDMEMORY=$(free -mt|tail -n 1|awk '{print$3F}')
-TOTALMEMORY=$(free -mt|tail -n 1|awk '{print$2F}')
-FREEMEMORY=$(free -mt|tail -n 1|awk '{print$4F}')
+USEDMEMORY=$(free -mt|tail -n 1|awk -F " " '{print$3F}')
+TOTALMEMORY=$(free -mt|tail -n 1|awk -F " " '{print$2F}')
+FREEMEMORY=$(free -mt|tail -n 1|awk -F " " '{print$4F}')
 THRESHOLDMEMORY=100
 date=$(date +%F-%H-%M-%S)
 MESSAGE=""
