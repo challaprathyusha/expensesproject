@@ -33,5 +33,6 @@ echo $UNIQWORDS|wc -w
 for word in $UNIQWORDS
 do
     OCCURENCES=$(echo $CONTENT|tr [A-Z]  [a-z]|tr " " "\n"|grep -o "word"|wc -l)
+    echo $OCCURENCES
     echo "word:$word,occurence of a word:$OCCURENCES"
 done
