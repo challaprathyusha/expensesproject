@@ -30,3 +30,8 @@ CONTENT=$(cat $SOURCEFILE)
 UNIQWORDS=$(echo $CONTENT|tr [A-Z]  [a-z]|tr " " "\n"|sort -u)
 echo "unique words in a file:$UNIQWORDS"
 echo $UNIQWORDS|wc -w
+for word in $UNIQWORDS
+do
+    OCCURENCES=$(echo $CONTENT|grep -o "word"|wc -l)
+    echo "word:$word,occurence of a word:$OCCURENCES"
+done
