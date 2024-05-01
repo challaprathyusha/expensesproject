@@ -1,0 +1,4 @@
+SOURCEFILE="$1"
+
+CONTENT=$(cat $SOURCEFILE)
+echo $CONTENT
