@@ -32,6 +32,6 @@ echo "unique words in a file:$UNIQWORDS"
 
 for word in $UNIQWORDS
 do
-    OCCURENCES=$(echo $CONTENT|grep -o "word"|wc -l)
+    OCCURENCES=$(echo $CONTENT|grep -o "$word"|wc -l)
     echo "word:$word,occurence of a word:$OCCURENCES"
 done
